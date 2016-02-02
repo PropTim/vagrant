@@ -45,7 +45,7 @@ module VagrantPlugins
 
         if Vagrant::Util::Platform.windows?
           # rsync for Windows expects cygwin style paths, always.
-          hostpath = Vagrant::Util::Platform.cygwin_path(hostpath)
+          hostpath = "/cygwin" + Vagrant::Util::Platform.cygwin_path(hostpath)
         end
 
         # Make sure the host path ends with a "/" to avoid creating
